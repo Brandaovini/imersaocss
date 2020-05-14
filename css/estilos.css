@@ -8,8 +8,8 @@
 body {
   background-image: url(https://http2.mlstatic.com/papel-de-parede-decoraco-quarto-sonic-painel-5m-D_NQ_NP_906087-MLB26499996729_122017-F.jpg);
   background-size: auto 100vh;
-  height: 100vh;
   font-size: 12px;
+  font-family: "Ultra", serif;
 }
 
 /* se a tela tiver pelo menos 400px vai carregar estes estilos */
@@ -30,8 +30,8 @@ body {
 @media (min-width: 1200px) {
   body {
     font-size: 20px;
-    background-image: none;
-    background-color: deeppink;
+    /*background-image: none;
+     background-color: deeppink;*/
   }
 }
 
@@ -80,13 +80,55 @@ a:hover {
 
 .site-title {
   font-size: 4em;
+  font-family: "Cinzel", serif;
 }
 
 .site-subtitle {
   font-style: italic;
+  font-family: "Ultra", serif;
+}
+.portfolio {
+  padding: 2em;
+  height: 100vh;
+}
+.portfolio h2 {
+  font-family: "Ultra", serif;
+  margin-bottom: 1.5em;
+  font-size: 2em;
+}
+.portfolio .grid {
+  display: grid;
+  gap: 1em;
+}
+@media (min-width: 560px) {
+  .portfolio .grid {
+    grid-template-columns: 240px 240px;
+  }
+}
+@media (min-width: 880px) {
+  .portfolio .grid {
+    grid-template-columns: repeat(3, 260px);
+    align-content: center;
+    justify-content: center;
+    height: calc(100vh - 5.5em - 48px);
+  }
+}
+
+.portfolio figure {
+  text-align: center;
 }
 
 .img-portfolio {
   height: 180px;
-  width: 180px;
+  width: 240px;
+  object-fit: cover;
+  object-position: center;
 }
+
+/* @media (min-width: 1200px) {
+  .img-portfolio {
+    height: auto;
+    width: 100%;
+  }
+}
+*/
