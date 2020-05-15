@@ -20,7 +20,7 @@ body {
 }
 @media (max-width: 480px) {
   body {
-    background-size: auto 50vh;
+    background-size: auto 100vh;
   }
 }
 
@@ -114,17 +114,44 @@ a:hover {
   font-size: 2.5em;
 }
 
+.sobre,
 .portfolio,
 .contato {
   padding: 2em;
   min-height: 100vh;
 }
 
+.sobre h2,
 .portfolio h2,
 .contato h2 {
   font-family: "Ultra", serif;
   margin-bottom: 1.5em;
   font-size: 2em;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.sobre p {
+  text-indent: 2em;
+  margin-bottom: 1.4em;
+  text-align: justify;
+}
+.sobre a {
+  text-decoration: underline;
+}
+
+.sobre .avatar {
+  float: right;
+  margin-left: 2em;
+}
+.sobre .avatar img {
+  border-radius: 50%;
 }
 
 .portfolio .grid {
