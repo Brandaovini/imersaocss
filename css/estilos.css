@@ -6,7 +6,7 @@
 }
 
 body {
-  background-image: url(https://http2.mlstatic.com/papel-de-parede-decoraco-quarto-sonic-painel-5m-D_NQ_NP_906087-MLB26499996729_122017-F.jpg);
+  background-image: url("../imagens/fundodegradecinza.webp");
   background-size: auto 100vh;
   font-size: 12px;
   font-family: "Ultra", serif;
@@ -16,6 +16,11 @@ body {
 @media (min-width: 400px) {
   body {
     font-size: 14px;
+  }
+}
+@media (max-width: 480px) {
+  body {
+    background-size: auto 50vh;
   }
 }
 
@@ -47,6 +52,7 @@ header {
   position: fixed;
   width: 100vw;
   top: 0;
+  z-index: 1;
 }
 
 .menu ul {
@@ -57,14 +63,20 @@ header {
 .menu li {
   list-style: none;
 }
+.menu a:active,
+.menu a:hover {
+  background-color: black;
+  color: white;
+}
 
 .menu a {
   display: block;
   padding: 10px 20px;
+  transition: background-color 1s, color 1s;
 }
 
 a {
-  color: teal;
+  color: rgb(10, 10, 10);
   text-decoration: none;
 }
 
@@ -72,9 +84,22 @@ a:hover {
   text-decoration: underline;
 }
 
+.titulo {
+  transform: scale(0.2) translateY(30vh);
+  opacity: 0;
+
+  animation: linear 2s animacaotitulo forwards;
+}
+@keyframes animacaotitulo {
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
 .site-subtitle,
 .site-title {
-  color: whitesmoke;
+  color: rgb(10, 10, 10);
   text-align: center;
 }
 
@@ -85,26 +110,34 @@ a:hover {
 
 .site-subtitle {
   font-style: italic;
-  font-family: "Ultra", serif;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5em;
 }
-.portfolio {
+
+.portfolio,
+.contato {
   padding: 2em;
-  height: 100vh;
+  min-height: 100vh;
 }
-.portfolio h2 {
+
+.portfolio h2,
+.contato h2 {
   font-family: "Ultra", serif;
   margin-bottom: 1.5em;
   font-size: 2em;
 }
+
 .portfolio .grid {
   display: grid;
   gap: 1em;
 }
+
 @media (min-width: 560px) {
   .portfolio .grid {
     grid-template-columns: 240px 240px;
   }
 }
+
 @media (min-width: 880px) {
   .portfolio .grid {
     grid-template-columns: repeat(3, 260px);
@@ -123,6 +156,11 @@ a:hover {
   width: 240px;
   object-fit: cover;
   object-position: center;
+  transition: transform 500ms;
+}
+
+.img-portfolio:hover {
+  transform: scale(1.2);
 }
 
 /* @media (min-width: 1200px) {
@@ -132,3 +170,17 @@ a:hover {
   }
 }
 */
+.contato .icons {
+  text-align: center;
+}
+
+.contato a {
+  color: black;
+  font-size: 4em;
+  transition: text-shadow 1s;
+}
+.contato a:active,
+.contato a:hover {
+  text-decoration: none;
+  text-shadow: 0px 0px 10px indigo;
+}
